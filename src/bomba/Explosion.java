@@ -13,7 +13,7 @@ public class Explosion extends Rectangle{
 		super(x, y, 150, 150);
 		xPos = x;
 		yPos = y;
-		setFill(Color.DARKRED);
+		setFill(Color.LIGHTCORAL);
 		duration = 1;
 	}
 	

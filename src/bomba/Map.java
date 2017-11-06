@@ -9,7 +9,7 @@ public class Map extends GridPane{
 	
 	public Map() {
 		setAlignment(Pos.CENTER);
-		setGridLinesVisible(true);
+		setGridLinesVisible(false);
 		for (int i = 0; i < 9; i++) {
 	         getColumnConstraints().addAll(new ColumnConstraints(50));
 	         getRowConstraints().add(new RowConstraints(50));

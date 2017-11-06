@@ -12,7 +12,7 @@ public class Player extends Circle{
 	private int yPlayerPos;
 	
 	public Player(int x, int y) {
-		super(20, Color.BLUE);
+		super(20, Color.CORNFLOWERBLUE);
 		isDead = false;
 		xPlayerPos = x;
 		yPlayerPos = y;
@@ -35,18 +35,21 @@ public class Player extends Circle{
 	
 	public void playerController(KeyEvent e) {
 		if (isDead == false) {
-			if (e.getCode() == KeyCode.UP) {
+			if (e.getCode() == KeyCode.UP && Main.isPause == false) {
 				yPlayerPos -= 50;
 				setPlayerPostion();
-			} else if (e.getCode() == KeyCode.DOWN) {
+			} else if (e.getCode() == KeyCode.DOWN && Main.isPause == false) {
 				yPlayerPos += 50;
 				setPlayerPostion();
-			} else if (e.getCode() == KeyCode.LEFT) {
+			} else if (e.getCode() == KeyCode.LEFT && Main.isPause == false) {
 				xPlayerPos -= 50;
 				setPlayerPostion();
-			} else if (e.getCode() == KeyCode.RIGHT) {
+			} else if (e.getCode() == KeyCode.RIGHT && Main.isPause == false) {
 				xPlayerPos += 50;
 				setPlayerPostion();
+			} else if (e.getCode() == KeyCode.ENTER && Main.isPause == true) {
+				Main.isPause = false;
+				Main.runTime();
 			}
 		}
 	}
@@ -74,4 +77,7 @@ public class Player extends Circle{
 		isDead = false;
 	}
 
+	public boolean isDead() {
+		return isDead;
+	}
 }

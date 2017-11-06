@@ -17,7 +17,7 @@ public class Bomb extends Pane{
 	private Text text;
 
 	public Bomb() {
-		bomb = new Circle(20, Color.RED);
+		bomb = new Circle(20, Color.INDIANRED);
 		
 		rd = new Random();
 		xBombPos = (rd.nextInt(9) * 50) + 25;
@@ -52,6 +52,11 @@ public class Bomb extends Pane{
 
 	public int getyBombPos() {
 		return yBombPos;
+	}
+
+	public boolean isInArea(int x, int y) {
+		return 	(xBombPos >= x) && (xBombPos <= x + 150) &&
+				(yBombPos >= y) && (yBombPos <= y + 150);
 	}
 	
 }
